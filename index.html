@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+    <title>MyPhone</title>
+</head>
+<body>
+    <div class="phone_full">
+        <div class="phone">
+            <div class="fringe">
+                <div class="fringe_upper-speaker"></div>
+                <div class="fringe_front-camera"></div>
+            </div>
+            <button class="phone_off-btn"></button>
+            <div class="phone_all phone_all-off">
+                <div class="not_unlocked-header">
+                    <div class="not_unlocked-header_left">
+                        <p class="operator">YOTA</p>
+                    </div>
+                    <div class="not_unlocked-header_right">
+                        <img class="network" src="img/header/network.png" alt="Сеть">
+                        <img class="wifi" src="img/header/wifi.png" alt="Вай Фай">
+                        <img class="battery" src="img/header/battery.png" alt="Батарея">
+                    </div>
+                </div>
+
+                <div class="not_unlocked">
+                    <div class="not_unlocked-info">
+                        <div class="not_unlocked-info-up">
+                            <p class="not_unlocked-info_time" id="not_unlocked_time"></p>
+                        </div>
+                        <div class="not_unlocked-info-down">
+                            <p class="not_unlocked-info-down_date" id="not_unlocked_date"></p>
+                        </div>
+                    </div>
+                    <div class="not_unlocked-down">
+                        <div class="not_unlocked-down_btn">
+                            <div class="not_unlocked-down_lantern">
+                                <svg class="not_unlocked-down_lantern-svg" fill="#fff" version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24px" height="24px" viewBox="0 0 345.876 345.876" xml:space="preserve"><g><g><path d="M174.493,345.876h0.985c13.787,0,25.316-9.776,28.066-22.746h-57.126C149.18,336.1,160.709,345.876,174.493,345.876z"/><rect x="97.103" width="151.669" height="26.901"/><path d="M174.985,215.98c4.452,0,8.067-3.627,8.067-8.07v-29.208c0-4.455-3.621-8.064-8.067-8.064c-4.447,0-8.067,3.615-8.067,8.064v29.208C166.918,212.354,170.539,215.98,174.985,215.98z"/><path d="M143.559,67.403c1.408,1.171,2.219,2.903,2.219,4.735v238.693h58.415V71.751c0-0.054-0.072-1.192-0.072-1.255c-0.072-1.85,0.685-3.627,2.072-4.855l29.886-26.442H109.542L143.559,67.403z M154.62,178.702c0-11.234,9.136-20.368,20.365-20.368c11.229,0,20.368,9.134,20.368,20.368v29.208c0,11.229-9.14,20.361-20.368,20.361c-11.229,0-20.365-9.133-20.365-20.361V178.702z"/></g></g></svg>
+                            </div>
+                            <div class="not_unlocked-down_camera">
+                                <svg class="not_unlocked-down_camera-svg" style="width: 26px; height: 26px;vertical-align: middle;fill: currentColor;overflow: hidden;" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg"><path d="M512 550m-115 0a115 115 0 1 0 230 0 115 115 0 1 0-230 0Z" fill="white" /><path d="M835 320H726c-9.2 0-17.8-4-24-10.8-56.8-63.6-78.2-85.2-101.4-85.2h-171c-23.4 0-46.4 21.6-103.4 85.4-6 6.8-14.8 10.6-23.8 10.6h-8.2v-16c0-8.8-7.2-16-16-16h-52c-8.8 0-16 7.2-16 16v16h-15C159.8 320 128 346.4 128 381.4v352c0 35 31.8 66.6 67 66.6h640c35.2 0 61-31.6 61-66.6v-352c0-35-25.8-61.4-61-61.4zM520 720.8c-100.6 4.6-183.4-78.2-178.8-178.8 4-87.8 75-158.8 162.8-162.8 100.6-4.6 183.4 78.2 178.8 178.8-4 87.8-75 158.8-162.8 162.8zM704 436c-14.4 0-26-11.6-26-26s11.6-26 26-26 26 11.6 26 26-11.6 26-26 26z" fill="white"></svg>
+                            </div>
+                        </div>
+                        <button class="not_unlocked-down_open" id="open_phone">
+                            <p class="open_phone_text">Нажмите,<br>чтобы открыть</p>
+                            <div class="open_phone_block"></div>
+                        </button>
+                    </div>
+                </div>
+
+                <div class="unlocked">
+                    <div class="unlocked_all">
+
+                    </div>
+                    <div class="unlocked_fixed">
+                        <div class="unlocked_down-part">
+                            <div class="apps">
+                                <img class="apps_icon" src="img/apps/phone.png" alt="Phone">
+                                <img class="apps_icon" src="img/apps/safari.png" alt="Safari">
+                                <img class="apps_icon" src="img/apps/whatsapp.png" alt="WhatsApp">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+      
+    <script src="js/script.js"></script>
+</body>
+</html>

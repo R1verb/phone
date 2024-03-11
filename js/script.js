@@ -5,14 +5,15 @@ const phoneAllOff = document.querySelector('.phone_all');
 const unlocked = document.querySelector('.unlocked');
 const operator = document.querySelector('.operator');
 const headerTime = document.querySelector('.header_time');
+const headerOper = document.querySelector('.header-oper');
 
 function updateClock() {
-  var currentTime = new Date();
-  var hours = currentTime.getHours();
-  var minutes = currentTime.getMinutes();
-  var seconds = currentTime.getSeconds();
-  var timeString = hours + ':' + (minutes < 10 ? '0' + minutes : minutes);
-  var headerTimeElement = document.querySelector('.header_time');
+  const currentTime = new Date();
+  const hours = currentTime.getHours();
+  const minutes = currentTime.getMinutes();
+  const seconds = currentTime.getSeconds();
+  const timeString = hours + ':' + (minutes < 10 ? '0' + minutes : minutes);
+  const headerTimeElement = document.querySelector('.header_time');
   if (headerTimeElement) {
     headerTimeElement.textContent = timeString;
   }
@@ -22,15 +23,15 @@ function updateClock() {
 setInterval(updateClock, 1000);
 updateClock();
 
-var currentDate = new Date();
-var daysOfWeek = ["Воскресенье", "Понедельник", "Вторник", "Среда", "Четверг", "Пятница", "Суббота"];
-var months = ["января", "февраля", "марта", "апреля", "мая", "июня", "июля", "августа", "сентября", "октября", "ноября", "декабря"];
+const currentDate = new Date();
+const daysOfWeek = ["Воскресенье", "Понедельник", "Вторник", "Среда", "Четверг", "Пятница", "Суббота"];
+const months = ["января", "февраля", "марта", "апреля", "мая", "июня", "июля", "августа", "сентября", "октября", "ноября", "декабря"];
 
-var dayOfWeek = daysOfWeek[currentDate.getDay()];
-var dayOfMonth = currentDate.getDate();
-var month = months[currentDate.getMonth()];
+const dayOfWeek = daysOfWeek[currentDate.getDay()];
+const dayOfMonth = currentDate.getDate();
+const month = months[currentDate.getMonth()];
 
-var dateString = dayOfWeek + ', ' + dayOfMonth + ' ' + month;
+const dateString = dayOfWeek + ', ' + dayOfMonth + ' ' + month;
 
 document.getElementById("not_unlocked_date").textContent = dateString;
 
@@ -72,18 +73,12 @@ function updateElements() {
   }
 }
 
-openPhone.addEventListener('click', () => {
-  unlocked.classList.toggle('active');
-});
-
 updateElements();
 
 phoneOff.addEventListener('click', updateElements);
 openPhone.addEventListener('click', updateElements);
 
 setInterval(updateClock, 1000);
-
-
 
 function jumpAnimation() {
   const openPhone = document.querySelector('.not_unlocked-down_open');
@@ -107,3 +102,18 @@ function jumpAnimation() {
   setTimeout(jumpAnimation, 2000);
 }
 jumpAnimation();
+
+phoneOff.addEventListener('click', () => {
+  setTimeout(() => {
+    phoneAllOff.classList.toggle('active');
+  }, 5);
+});
+
+openPhone.addEventListener('click', () => {
+  notUnlocked.classList.remove('not_unlocked-off');
+  notUnlocked.classList.add('slide-up');
+  notUnlocked.addEventListener('animationend', () => {
+    notUnlocked.classList.add('not_unlocked-off');
+    notUnlocked.classList.remove('slide-up');
+  }, { once: true });
+});

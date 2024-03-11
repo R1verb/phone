@@ -1,9 +1,10 @@
+/* Global Styles */
 body {
     font-family: "Roboto", sans-serif;
+    background: #4e4e4e;
 }
 
-// DEFAULT
-
+/* Default Styles */
 .phone_off-btn {
     position: absolute;
     height: 80px;
@@ -58,19 +59,18 @@ body {
 .header_time_not-active {
     display: none;
 }
+
 .operator_not-active {
     display: none;
 }
+
 .header_time {
     font-size: 16px;
     color: #fff;
     font-weight: 500;
 }
 
-// DEFAULT
-
-// NOT_UNLOCKED
-
+/* Not Unlocked Styles */
 .phone_full {
     max-width: 400px;
     display: block;
@@ -91,7 +91,7 @@ body {
 }
 
 .phone_all {
-    background: url(../img/wallpapers/light-a.jpg);
+    background: url(../img/wallpapers/Black-Light.jpg);
     background-repeat: no-repeat;
     background-size: cover;
     height: 100%;
@@ -100,19 +100,28 @@ body {
 }
 
 .not_unlocked {
-    height: 100%;
+    height: 92%;
     position: relative;
 }
 
-.not_unlocked-header-oper,
-.not_unlocked-header-time {
+.phone_all {
+    opacity: 0;
+    transition: opacity 1.5s ease;
+}
+
+.phone_all.active {
+    opacity: 1;
+}
+
+.header-oper,
+.header-time {
     display: flex;
     position: relative;
     justify-content: space-between;
     cursor: default;
 }
 
-.not_unlocked-header_left {
+.header_left {
     padding-top: 15px;
     align-items: center;
     text-align: center;
@@ -124,7 +133,7 @@ body {
     color: #fff;
 }
 
-.not_unlocked-header_right {
+.header_right {
     display: flex;
     gap: 6px;
     padding-top: 15px;
@@ -136,7 +145,6 @@ body {
 .network {
     width: 18px;
     height: 13px;
-
 }
 
 .wifi {
@@ -169,45 +177,31 @@ body {
 
 .not_unlocked-info-down {
     display: inline-block;
-    max-width: 220px;
 }
+
 .not_unlocked-info-down_date {
     font-size: 19px;
     font-weight: 500;
 }
+
 .not_unlocked-down {
     position: absolute;
-    bottom: 0;
     align-items: center;
     text-align: center;
     width: 100%;
-    margin-bottom: 110px;
+    bottom: 0;
+    margin-bottom: 55px;
 }
+
 .not_unlocked-down_btn {
     display: flex;
     justify-content: space-between;
     margin-bottom: -15px;
 }
 
-.not_unlocked-down_lantern {
-    margin-left: 40px;
-    align-items: center;
-    text-align: center;
-    justify-content: center;
-    background: #232323;
-    width: 45px;
-    height: 45px;
-    border-radius: 50%;
-    display: inline-block;
-    opacity: 0.7;
-}
-
-.not_unlocked-down_lantern-svg {
-    text-align: center;
-    padding-top: 10px;
-}
-
+.not_unlocked-down_lantern,
 .not_unlocked-down_camera {
+    margin-left: 40px;
     margin-right: 40px;
     align-items: center;
     text-align: center;
@@ -220,6 +214,7 @@ body {
     opacity: 0.7;
 }
 
+.not_unlocked-down_lantern-svg,
 .not_unlocked-down_camera-svg {
     text-align: center;
     padding-top: 9px;
@@ -243,10 +238,7 @@ body {
     border-radius: 5px;
 }
 
-// NOT_UNLOCKED
-
-// UNLOCKED
-
+/* Unlocked Styles */
 .unlocked {
     position: relative;
     align-items: center;
@@ -258,12 +250,44 @@ body {
 }
 
 .unlocked_all {
-    
+    margin: 40px 15px 0;
 }
+
+.unlocked_all-apps {
+    text-align: left;
+    align-items: center;
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.apps_block {
+    align-items: center;
+    text-align: center;
+    display: inline-block;
+    position: relative;
+    max-width: 85px;
+}
+
+.apps_block-text {
+    color: #fff;
+    font-size: 13px;
+    padding-top: 15px;
+    font-weight: 550;
+    letter-spacing: 0.20px;
+    position: absolute;
+    text-align: center;
+    align-items: center;
+    white-space: nowrap;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
 .unlocked_fixed {
     position: absolute;
     bottom: 0;
 }
+
 .unlocked_down-part {
     background: #232323;
     display: inline-block;
@@ -274,43 +298,55 @@ body {
     margin-bottom: 12px;
 }
 
-.unlocked_down-part .apps .apps_icon:not(:last-child) {
+.unlocked_down-part .unlocked_down-part_apps .apps_icon:not(:last-child) {
     margin-right: 15px;
 }
 
-.apps {
+.unlocked_down-part_apps {
     padding-top: 10px;
 }
 
-// UNLOCKED
-
-
-
-
-
-.not_unlocked-off {
-    display: none;
+/* Open Apps Styles */
+.notes {
+    background: #000;
 }
 
+/* Other Styles */
+.not_unlocked-off,
+.unlocked-off,
 .phone_all-off {
     display: none;
 }
-.unlocked-off {
+
+.notes-off {
     display: none;
 }
 
-
-
+/* Animations */
 @keyframes jump {
     0%, 100% {
-      transform: translateY(0);
+        transform: translateY(0);
     }
     50% {
-      transform: translateY(-15px);
+        transform: translateY(-15px);
     }
-  }
-  
-  .jump-animation {
+}
+
+.jump-animation {
     animation: jump 0.5s ease-in-out;
-  }
-  
+}
+
+.not_unlocked.slide-up {
+    animation: slideUpAnimation 0.5s ease forwards;
+}
+
+@keyframes slideUpAnimation {
+    from {
+        transform: translateY(0);
+        opacity: 1;
+    }
+    to {
+        transform: translateY(-100%);
+        opacity: 0;
+    }
+}

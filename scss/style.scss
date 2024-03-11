@@ -55,13 +55,28 @@ body {
     display: inline-block;
 }
 
+.header_time_not-active {
+    display: none;
+}
+.operator_not-active {
+    display: none;
+}
+.header_time {
+    font-size: 16px;
+    color: #fff;
+    font-weight: 500;
+}
+
 // DEFAULT
 
 // NOT_UNLOCKED
 
 .phone_full {
-    // margin-left: 20px;
-    margin-top: 40px;
+    max-width: 400px;
+    display: block;
+    margin: 0 auto;
+    padding: 30px;
+    position: absolute;
 }
 
 .phone {
@@ -76,7 +91,7 @@ body {
 }
 
 .phone_all {
-    background: url(../img/wallpapers/Purple-Light.jpg);
+    background: url(../img/wallpapers/light-a.jpg);
     background-repeat: no-repeat;
     background-size: cover;
     height: 100%;
@@ -89,7 +104,8 @@ body {
     position: relative;
 }
 
-.not_unlocked-header {
+.not_unlocked-header-oper,
+.not_unlocked-header-time {
     display: flex;
     position: relative;
     justify-content: space-between;
@@ -146,7 +162,8 @@ body {
 }
 
 .not_unlocked-info_time {
-    font-size: 70px;
+    font-size: 80px;
+    font-weight: 600;
     align-items: center;
 }
 
@@ -156,6 +173,7 @@ body {
 }
 .not_unlocked-info-down_date {
     font-size: 19px;
+    font-weight: 500;
 }
 .not_unlocked-down {
     position: absolute;
@@ -235,8 +253,13 @@ body {
     text-align: center;
     justify-content: center;
     padding: 0 10px;
+    height: 0;
+    overflow: hidden;
+    transition: height 0.5s ease-in-out;
+}
+
+.unlocked.active {
     height: 96%;
-    
 }
 
 .unlocked_all {
@@ -277,3 +300,22 @@ body {
 .phone_all-off {
     display: none;
 }
+.unlocked-off {
+    display: none;
+}
+
+
+
+@keyframes jump {
+    0%, 100% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(-15px);
+    }
+  }
+  
+  .jump-animation {
+    animation: jump 0.5s ease-in-out;
+  }
+  
